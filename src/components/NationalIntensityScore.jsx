@@ -9,8 +9,9 @@ function NationalIntensityScore({ intensityScore }) {
         whereas renewable energy is carbon-free.
       </p>
       <br /> Have a quick look here 👀 🧺 👀 🧺 <br />
-      The current Carbon intensity is {intensityScore[0].intensity.actual}{' '}
-      gCO2/kWh and is classed as {intensityScore[0].intensity.index}
+      The current carbon intesity for all of Great Britain is{' '}
+      {intensityScore[0].intensity.actual} gCO2/kWh and is classed as{' '}
+      {intensityScore[0].intensity.index}
     </>
   );
 }

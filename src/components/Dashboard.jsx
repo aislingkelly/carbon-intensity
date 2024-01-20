@@ -6,6 +6,7 @@ import {
 } from '../utils/api';
 import NationalIntensityScore from './NationalIntensityScore';
 import GenerationMix from './GenerationMix';
+import Regional from './Regional';
 
 const Dashboard = () => {
   const [isError, setIsError] = useState(false);
@@ -63,6 +64,7 @@ const Dashboard = () => {
         <h1>Dashboard</h1>
         <NationalIntensityScore intensityScore={intensityScore} />
         <GenerationMix />
+        <Regional />
       </div>
     </>
   );
