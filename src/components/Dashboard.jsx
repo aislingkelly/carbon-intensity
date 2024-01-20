@@ -5,6 +5,7 @@ import {
   getRegionalIntensityRange,
 } from '../utils/api';
 import NationalIntensityScore from './NationalIntensityScore';
+import GenerationMix from './GenerationMix';
 
 const Dashboard = () => {
   const [isError, setIsError] = useState(false);
@@ -61,6 +62,7 @@ const Dashboard = () => {
       <div className="container mx-auto">
         <h1>Dashboard</h1>
         <NationalIntensityScore intensityScore={intensityScore} />
+        <GenerationMix />
       </div>
     </>
   );
