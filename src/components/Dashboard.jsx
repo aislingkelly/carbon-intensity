@@ -5,7 +5,7 @@ import {
   getRegionalIntensityRange,
 } from '../utils/api';
 import NationalIntensityScore from './NationalIntensityScore';
-import GenerationMix from './GenerationMix';
+import NationalGenerationMix from './NationalGenerationMix';
 import Regional from './Regional';
 
 const Dashboard = () => {
@@ -44,6 +44,7 @@ const Dashboard = () => {
   useEffect(() => {
     getRegionalIntensityRange(region)
       .then((data) => {
+        console.log(data.data.data, 'regional intensity range data');
         setRegionalIntensityRange(data.data.data);
         setIsLoading(false);
       })
@@ -63,7 +64,7 @@ const Dashboard = () => {
       <div className="container mx-auto">
         <h1>Dashboard</h1>
         <NationalIntensityScore intensityScore={intensityScore} />
-        <GenerationMix />
+        {/* <NationalGenerationMix /> */}
         <Regional />
       </div>
     </>

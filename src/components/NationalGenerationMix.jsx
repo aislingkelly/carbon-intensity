@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getGenerationMix } from '../utils/api';
 
-const GenerationMix = () => {
+const NationalGenerationMix = () => {
   const [generationMix, setGenerationMix] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -58,4 +58,4 @@ const GenerationMix = () => {
   );
 };
 
-export default GenerationMix;
+export default NationalGenerationMix;

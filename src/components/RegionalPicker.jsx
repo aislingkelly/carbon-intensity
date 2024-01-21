@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const RegionPicker = ({ setRegion }) => {
+const RegionPicker = ({ setRegion, regionName }) => {
   const [input, setInput] = useState('');
 
   const updateInput = (event) => {
@@ -10,11 +10,11 @@ const RegionPicker = ({ setRegion }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setRegion(`${input}`);
-    setInput('');
   };
 
   return (
     <>
+      Region: {regionName}
       Select UK region. The chart below will show the 24 hour forward forecast
       for the region you pick.
       <form onSubmit={handleSubmit}>
@@ -24,6 +24,7 @@ const RegionPicker = ({ setRegion }) => {
           onChange={updateInput}
           value={input}
         >
+          <option value="15">England</option>
           <option value="1">North Scotland</option>
           <option value="2">South Scotland</option>
           <option value="3">North West England</option>
@@ -38,7 +39,6 @@ const RegionPicker = ({ setRegion }) => {
           <option value="12">South England</option>
           <option value="13">London</option>
           <option value="14">South East England</option>
-          <option value="15">England</option>
           <option value="16">Scotland</option>
           <option value="17">Wales</option>
         </select>

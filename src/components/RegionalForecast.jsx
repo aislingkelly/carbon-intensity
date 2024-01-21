@@ -8,9 +8,11 @@ function RegionalForecast({ regionalIntensityRange }) {
         This can help you plan your energy use, switching devices on when energy
         is green and off when it's not.
       </p>
-      {regionalIntensityRange.map((timeFrame, index) => (
-        <RegionalIntensityCard key={index} timeFrame={timeFrame} />
-      ))}
+      <div className="flex flex-wrap">
+        {regionalIntensityRange.map((timeFrame, index) => (
+          <RegionalIntensityCard key={index} timeFrame={timeFrame} />
+        ))}
+      </div>
     </>
   );
 }

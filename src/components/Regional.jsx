@@ -6,12 +6,14 @@ import { useEffect, useState } from 'react';
 function Regional() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [region, setRegion] = useState('3');
+  const [region, setRegion] = useState('15');
+  const [regionName, setRegionName] = useState('England');
   const [regionalIntensityRange, setRegionalIntensityRange] = useState([]);
 
   useEffect(() => {
     getRegionalIntensityRange(region)
       .then((data) => {
+        setRegionName(data.data.shortname);
         setRegionalIntensityRange(data.data.data);
         setIsLoading(false);
       })
@@ -29,7 +31,11 @@ function Regional() {
 
   return (
     <>
-      <RegionPicker setRegion={setRegion} />
+      <RegionPicker
+        setRegion={setRegion}
+        region={region}
+        regionName={regionName}
+      />
       <RegionalForecast regionalIntensityRange={regionalIntensityRange} />
     </>
   );

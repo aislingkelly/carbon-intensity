@@ -9,5 +9,5 @@ export default {
     themes: ['nord'],
   },
   // safelist the classes for dynamically generated bg class on cards
-  safelist: [{ pattern: /^bg-(red|green|blue|yellow|orange)-500$/ }],
+  safelist: [{ pattern: /^bg-(red|green|blue|yellow|orange)-300$/ }],
 };
