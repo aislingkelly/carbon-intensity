@@ -27,20 +27,31 @@ const DateTimeSearch = ({ setDateTime }) => {
 
   return (
     <>
-      Select a Date <br />
-      Choose a date to proceed. The maximum date allowed is two days from today.
-      <form onSubmit={handleSubmit}>
-        <label>Pick a date</label>
-        <input
-          type="date"
-          placeholder="Your Date"
-          onChange={updateInput}
-          value={input}
-          max={maxDate} // Set the max attribute to two days in the future
-          min="2018-08-01"
-        />
-
-        <button type="submit">Go</button>
+      <form onSubmit={handleSubmit} className="flex my-10">
+        <label className="form-control w-full max-w-xs">
+          <div className="label">
+            <span
+              className="label-text"
+              placeholder="Select option"
+              onChange={updateInput}
+              value={input}
+            >
+              Pick a date
+            </span>
+          </div>
+          <input
+            className="input input-bordered"
+            type="date"
+            placeholder="Your Date"
+            onChange={updateInput}
+            value={input}
+            max={maxDate} // Set the max attribute to two days in the future
+            min="2018-08-01"
+          />
+        </label>
+        <button className="btn btn-primary mt-9 ml-5" type="submit">
+          See historical carbon intensity data
+        </button>
       </form>
     </>
   );

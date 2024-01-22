@@ -60,20 +60,12 @@ const GenerationMix = ({ dateTime }) => {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row w-full justify-evenly">
+      <div className="flex flex-col lg:flex-row w-full justify-evenly mt-20">
         <div className="w-full lg:w-5/12">
-          <h3 className="text-3xl font-extrabold bg-gradient-to-br from-fuchsia-600 to-indigo-600 bg-clip-text text-transparent">
-            Generation Mix
-          </h3>
-
-          <p>
-            Where does Great Britain's electricity come from? The current
-            generation mix shows what power sources have been running on the
-            system in the last 30 minutes.
-          </p>
+          <h3 className="font-semibold">Generation Mix</h3>
 
           <div>
-            <table className="national-generation-table">
+            <table className="national-generation-table table">
               <thead>
                 <tr>
                   <th className="national-generation-header">Fuel Source</th>
@@ -95,7 +87,7 @@ const GenerationMix = ({ dateTime }) => {
             </table>
           </div>
         </div>
-        <div className="w-full lg:w-5/12 mt-10">
+        <div className="w-full lg:w-5/12">
           <Doughnut data={chartData} />
         </div>
       </div>

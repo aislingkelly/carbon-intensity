@@ -55,7 +55,7 @@ const Home = () => {
 
         <NationalIntensityScore intensityScore={intensityScore} />
         <Regional />
-        <National />
+        {/* <National /> */}
       </div>
     </>
   );
