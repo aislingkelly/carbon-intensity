@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { getIntensityScore } from '../utils/api';
 import NationalIntensityScore from './NationalIntensityScore';
 import Regional from './Regional';
-import National from './National';
 
 const Home = () => {
   const [isError, setIsError] = useState(false);
@@ -21,7 +20,7 @@ const Home = () => {
   }, []);
 
   if (isLoading) {
-    return <p>Loading!</p>;
+    return <span className="loading loading-spinner loading-md"></span>;
   }
   if (isError) {
     return <p>Error!</p>;
@@ -32,8 +31,8 @@ const Home = () => {
         <section>
           <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             <div className="mr-auto place-self-center lg:col-span-7">
-              <h1 className="max-w-2xl mb-4 text-4xl font-extrabold md:text-5xl xl:text-6xl tracking-tight">
-                🧺 Should you stick the washing on?
+              <h1 className="max-w-2xl mb-4 text-4xl font-extrabold md:text-5xl xl:text-6xl tracking-tight text-balance">
+                ☀️ Should you stick the washing on?
               </h1>
 
               <p className="max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl">
@@ -55,7 +54,6 @@ const Home = () => {
 
         <NationalIntensityScore intensityScore={intensityScore} />
         <Regional />
-        {/* <National /> */}
       </div>
     </>
   );

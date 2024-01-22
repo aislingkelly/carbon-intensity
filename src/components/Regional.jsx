@@ -23,7 +23,7 @@ function Regional() {
   }, [region]);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <span className="loading loading-spinner loading-md"></span>;
   }
   if (isError) {
     return <p>Error</p>;
@@ -31,8 +31,8 @@ function Regional() {
 
   return (
     <>
-      <section className="w-2/5 m-auto mt-40 text-center">
-        <h2 className="text-2xl font-extrabold md:text-3xl xl:text-4xl mb-4 tracking-tight">
+      <section className="w-full lg:w-2/5 m-auto mt-40 text-center px-4 lg:px-0">
+        <h2 className="text-2xl font-extrabold md:text-3xl xl:text-4xl mb-4 tracking-tight text-balance ">
           🔌 👀 Wondering when to power up?{' '}
         </h2>{' '}
         <p className="font-light">

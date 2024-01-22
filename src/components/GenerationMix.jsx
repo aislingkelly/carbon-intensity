@@ -55,7 +55,8 @@ const GenerationMix = ({ dateTime }) => {
       });
   }, [dateTime]);
 
-  if (isLoading) return <p>Loading</p>;
+  if (isLoading)
+    return <span className="loading loading-spinner loading-md"></span>;
   if (isError) return <p>Error</p>;
 
   return (

@@ -10,10 +10,10 @@ export default {
   },
   // safelist the classes for dynamically generated bg class on cards
   safelist: [
-    'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-red-200 to-red-200',
-    'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-orange-200 to-orange-200',
-    'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-yellow-200 to-yellow-200',
-    'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-blue-200 to-blue-200',
-    'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-green-200 to-green-200',
+    'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-slate-200 to-slate-300',
+    'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-200 to-purple-300',
+    'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-orange-200 to-orange-300',
+    'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-cyan-200 to-cyan-300',
+    'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-emerald-200 to-emerald-300',
   ],
 };

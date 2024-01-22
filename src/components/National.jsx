@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import NationalDatePicker from './NationalDatePicker';
 import { NationalLineChart } from './NationalLineChart';
 import { NationalBarChart } from './NationalBarChart';
-
-import { NationalIntensityChart } from './NationalIntensityChart';
 import { getIntensityRange } from '../utils/api';
 import GenerationMix from './GenerationMix';
 
@@ -27,7 +25,7 @@ const National = () => {
   }, [dateTime]);
 
   if (isLoading) {
-    return <p>Loading!</p>;
+    return <span className="loading loading-spinner loading-md"></span>;
   }
   if (isError) {
     return <p>Error!</p>;
@@ -37,8 +35,8 @@ const National = () => {
       <section>
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
-            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold md:text-5xl xl:text-6xl tracking-tight">
-              🧺 The bigger picture
+            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold md:text-5xl xl:text-6xl tracking-tight text-balance">
+              ⚡ In the mix
             </h1>
 
             <p className="max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl">
@@ -51,15 +49,12 @@ const National = () => {
             </p>
           </div>
           <div className="lg:mt-0 lg:col-span-5 lg:flex">
-            <img
-              src="washing.webp"
-              alt="Washing basket overflowing with laundry"
-            />
+            <img src="beat.webp" alt="Electric mixer" />
           </div>
         </div>
       </section>
-      <section className="w-2/5 m-auto mt-20 text-center">
-        <h2 className="text-2xl font-extrabold md:text-3xl xl:text-4xl mb-4 tracking-tight">
+      <section className="w-full lg:w-2/5 m-auto mt-10 text-center px-4 lg:px-0">
+        <h2 className="text-2xl font-extrabold md:text-3xl xl:text-4xl mb-4 tracking-tight text-balance ">
           📈 🧐 What are the trends?
         </h2>{' '}
         <p className="font-light">

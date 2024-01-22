@@ -1,8 +1,8 @@
 function NationalIntensityScore({ intensityScore }) {
   return (
     <>
-      <section className="w-3/4 m-auto flex flex-col-reverse md:flex-row-reverse justify-between">
-        <div className="w-1/2 place-self-center ">
+      <section className="w-11/12 lg:w-3/4 m-auto flex flex-col md:flex-row-reverse justify-between">
+        <div className="w-full lg:w-5/12 place-self-center mb-10">
           <h2 className="text-2xl font-extrabold md:text-3xl xl:text-4xl mb-4 tracking-tight">
             🌍 Why does this matter?
           </h2>
@@ -16,21 +16,26 @@ function NationalIntensityScore({ intensityScore }) {
             planet.
           </p>
         </div>
-        <div className="rounded-3xl w-96 border shadow-lg min-h-96 flex flex-col justify-between">
+        <div className="rounded-3xl w-full lg:w-5/12 border shadow-lg min-h-96 flex flex-col justify-between">
           <div className="text-center p-4">
             <p className="uppercase text-xs">Current carbon intensity</p>
           </div>
 
           <div className="text-center">
-            <p className="text-9xl font-extrabold bg-gradient-to-br from-fuchsia-600 to-indigo-600 bg-clip-text text-transparent">
-              {intensityScore[0].intensity.actual}
+            <p>
+              <span className="text-9xl font-extrabold leading-none">
+                {intensityScore[0].intensity.actual}
+              </span>
+
+              <br />
+              <span className="text-sm font-normal  leading-none">
+                gCO2/kWh
+              </span>
             </p>
           </div>
 
-          <div className="text-center p-4">
-            <p>
-              gCO2/kWh and is classed as {intensityScore[0].intensity.index}
-            </p>
+          <div className="text-center p-4 uppercase">
+            <p>{intensityScore[0].intensity.index}</p>
           </div>
         </div>
       </section>

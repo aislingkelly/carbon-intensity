@@ -27,7 +27,7 @@ const DateTimeSearch = ({ setDateTime }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex my-10">
+      <form onSubmit={handleSubmit} className="lg:flex my-10">
         <label className="form-control w-full max-w-xs">
           <div className="label">
             <span
