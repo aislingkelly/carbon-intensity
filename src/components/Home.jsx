@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react';
-import {
-  getIntensityScore,
-  getIntensityRange,
-  getRegionalIntensityRange,
-} from '../utils/api';
+import { getIntensityScore } from '../utils/api';
 import NationalIntensityScore from './NationalIntensityScore';
-import NationalGenerationMix from './NationalGenerationMix';
 import Regional from './Regional';
+import National from './National';
 
 const Home = () => {
   const [isError, setIsError] = useState(false);
@@ -23,35 +19,6 @@ const Home = () => {
         console.log(error);
       });
   }, []);
-
-  const [dateTime, setDateTime] = useState('date');
-  const [intensityRange, setIntensityRange] = useState([]);
-
-  useEffect(() => {
-    getIntensityRange(dateTime)
-      .then((data) => {
-        setIntensityRange(data.data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setIsError(true);
-      });
-  }, [dateTime]);
-
-  const [region, setRegion] = useState('3');
-  const [regionalIntensityRange, setRegionalIntensityRange] = useState([]);
-
-  useEffect(() => {
-    getRegionalIntensityRange(region)
-      .then((data) => {
-        console.log(data.data.data, 'regional intensity range data');
-        setRegionalIntensityRange(data.data.data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setIsError(true);
-      });
-  }, [region]);
 
   if (isLoading) {
     return <p>Loading!</p>;
@@ -87,8 +54,8 @@ const Home = () => {
         </section>
 
         <NationalIntensityScore intensityScore={intensityScore} />
-        {/* <NationalGenerationMix /> */}
         <Regional />
+        <National />
       </div>
     </>
   );

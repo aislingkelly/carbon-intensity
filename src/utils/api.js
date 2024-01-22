@@ -7,14 +7,18 @@ const api = axios.create({
 
 export const getIntensityScore = () => {
   return api.get(`/intensity`).then((response) => {
-    console.log(response.data, 'getIntensityScore');
     return response.data;
   });
 };
 
 export const getIntensityRange = (dateTime) => {
-  return api.get(`/intensity/${dateTime}`).then((response) => {
-    console.log(response.data, 'getIntensityRange');
+  let dateQuery = getCurrentDateInISOFormat();
+  if (dateTime.length > 0) {
+    dateQuery = dateTime;
+  }
+  console.log(dateQuery);
+  return api.get(`/intensity/${dateQuery}/pt24h`).then((response) => {
+    console.log(response.data, 'response with date');
     return response.data;
   });
 };
@@ -25,14 +29,16 @@ export const getRegionalIntensityRange = (region) => {
   return api
     .get(`/regional/intensity/${currentDate}/fw24h/regionid/${region}`)
     .then((response) => {
-      console.log(response.data, 'getRegionalIntensityRange');
       return response.data;
     });
 };
 
-export const getGenerationMix = async () => {
-  return api.get('/generation').then((response) => {
-    console.log(response.data, 'getGenerationMix');
+export const getGenerationMix = async (dateTime) => {
+  let dateQuery = getCurrentDateInISOFormat();
+  if (dateTime.length > 0) {
+    dateQuery = dateTime;
+  }
+  return api.get(`/generation/${dateQuery}/pt24h`).then((response) => {
     return response.data;
   });
 };

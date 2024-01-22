@@ -18,9 +18,7 @@ function NationalIntensityScore({ intensityScore }) {
         </div>
         <div className="rounded-3xl w-96 border shadow-lg min-h-96 flex flex-col justify-between">
           <div className="text-center p-4">
-            <p className="uppercase text-xs">
-              Current carbon intensity for Great Britain
-            </p>
+            <p className="uppercase text-xs">Current carbon intensity</p>
           </div>
 
           <div className="text-center">

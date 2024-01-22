@@ -18,8 +18,10 @@ const RegionalIntensityCard = ({ timeFrame }) => {
 
   return (
     <>
-      <div className={`${getColor(indexcol)} w-1/12 text-center border`}>
-        <p className="text-3xl font-bold  py-5">
+      <div
+        className={`${getColor(indexcol)} w-1/12 text-center border rounded-md`}
+      >
+        <p className="text-3xl font-extrabold  py-5">
           {timeFrame.intensity.forecast}
         </p>
         <p className="text-xs uppercase"> {timeFrame.intensity.index}</p>
