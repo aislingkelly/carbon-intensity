@@ -1,12 +1,12 @@
 import RegionalIntensityCard from './RegionalIntensityCard';
 
-function RegionalForecast({ regionalIntensityRange }) {
+function RegionalForecast({ regionalIntensityRange, regionName }) {
   return (
     <>
-      <h2>Regional Forecast</h2>
-      <p>
-        This can help you plan your energy use, switching devices on when energy
-        is green and off when it's not.
+      <p className="font-light uppercase text-xs text-right">
+        Current Region
+        <br />{' '}
+        <span className="font-bold text-lg normal-case">{regionName}</span>
       </p>
       <div className="flex flex-wrap">
         {regionalIntensityRange.map((timeFrame, index) => (

@@ -31,12 +31,22 @@ function Regional() {
 
   return (
     <>
-      <RegionPicker
-        setRegion={setRegion}
-        region={region}
+      <section className="w-2/5 m-auto mt-40 text-center">
+        <h2 className="text-2xl font-extrabold md:text-3xl xl:text-4xl mb-4 tracking-tight">
+          🔌 👀 Wondering when to power up?{' '}
+        </h2>{' '}
+        <p className="font-light">
+          Check out the chart below for a 24-hour forecast of carbon intensity
+          in your selected region. It's your handy guide to finding the greenest
+          times for using electricity!
+        </p>{' '}
+        <RegionPicker setRegion={setRegion} region={region} />
+      </section>
+
+      <RegionalForecast
+        regionalIntensityRange={regionalIntensityRange}
         regionName={regionName}
       />
-      <RegionalForecast regionalIntensityRange={regionalIntensityRange} />
     </>
   );
 }

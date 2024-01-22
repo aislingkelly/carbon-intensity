@@ -1,10 +1,14 @@
 import './App.css';
-import Dashboard from './components/Dashboard';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import Nav from './components/Nav';
 
 function App() {
   return (
     <>
-      <Dashboard />
+      <Nav />
+      <Home />
+      <Footer />
     </>
   );
 }
