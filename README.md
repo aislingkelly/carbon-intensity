@@ -22,7 +22,7 @@ PowerUp is a web application designed to help users minimise their carbon footpr
 1. Clone the repository:
 
    ```bash
-   git clone [repository URL]
+   git clone https://github.com/aislingkelly/power-up-carbon.git
    ```
 
 2. Navigate to the project directory:
